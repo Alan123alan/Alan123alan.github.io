@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link href="https://fonts.cdnfonts.com/css/valentines-day" rel="stylesheet">
+</head>
+<body>
+    <div class="root-container">
+        <div id="doubt-overpower">
+            <div class="title-container">
+                <h1>Will You Be My Valentine?</h1>
+            </div>
+            <div class="image-container">
+                <img id="cupid-cheems-1" class="cupid-cheems" src="cupid cheems.png" alt="a cheems dressed as cupid">
+            </div>
+            <div class="image-container">
+                <img id="cupid-cheems-2" class="cupid-cheems" src="cupid cheems.png" alt="a cheems dressed as cupid">
+                <img id="heart" class="heart" src="heart.png" alt="a red heart">
+                <img id="cupid-cheems-3" class="cupid-cheems" src="cupid cheems.png" alt="a cheems dressed as cupid">
+            </div>
+            <div class="button-container">
+                <div></div>
+                <button id="grow-button">Yes</button>
+                <button id="shrink-button" class="no-button">No</button>
+                <div></div>
+            </div>
+        </div>
+        <div id="sadness-overpower" class="hidden">
+            <img id="defeated-cheems" class="defeated-cheems" src="defeated cheems.jpeg" alt="a samurai cheems comtemplating defeat">
+        </div>
+        <div id="happiness-overpower" class="hidden">
+            <img class="loved-cheems" src="loved cheems.jpeg" alt="a cheems in love witha pink background">
+        </div>
+    </div>
+
+    <script>
+        let heart = document.getElementById("heart")
+        let cupidCheems1 = document.getElementById("cupid-cheems-1");
+        let cupidCheems2 = document.getElementById("cupid-cheems-2");
+        let cupidCheems3 = document.getElementById("cupid-cheems-3");
+        let defeatedCheems = document.getElementById("sadness-overpower");
+        let doubtOverpower = document.getElementById("doubt-overpower");
+        let happinessOverpower = document.getElementById("happiness-overpower");
+        let rootContainer = document.getElementById("root-container");
+        let growBttn = document.getElementById("grow-button");
+        let shrinkBttn = document.getElementById("shrink-button");
+        let heartSwitcher = (heart, state)=>{
+            switch (state) {
+                case 1:
+                    heart.classList.remove("shrink1");
+                    heart.classList.remove("shrink2");
+                    heart.classList.remove("shrink3");
+                    heart.classList.add("grow1");
+                    heart.classList.remove("grow2");
+                    heart.classList.remove("grow3");
+                    cupidCheems1.style.opacity = 1;
+                    cupidCheems2.style.opacity = 0;
+                    cupidCheems3.style.opacity = 0;
+                    defeatedCheems.classList.add("hidden");
+                    // cupidCheems1.classList.remove("hidden");
+                    // cupidCheems2.classList.add("hidden");
+                    // cupidCheems3.classList.add("hidden");
+                    break;
+                case 2:
+                    heart.classList.remove("shrink1");
+                    heart.classList.remove("shrink2");
+                    heart.classList.remove("shrink3");
+                    heart.classList.remove("grow1");
+                    heart.classList.add("grow2");
+                    heart.classList.remove("grow3");
+                    cupidCheems1.style.opacity = 1;
+                    cupidCheems2.style.opacity = 1;
+                    cupidCheems3.style.opacity = 0;
+                    defeatedCheems.classList.add("hidden");
+                    // cupidCheems1.classList.remove("hidden");
+                    // cupidCheems2.classList.remove("hidden");
+                    // cupidCheems3.classList.add("hidden");
+                    break;
+                case 3:
+                    heart.classList.remove("shrink1");
+                    heart.classList.remove("shrink2");
+                    heart.classList.remove("shrink3");
+                    heart.classList.remove("grow1");
+                    heart.classList.remove("grow2");
+                    heart.classList.add("grow3");
+                    cupidCheems1.style.opacity = 1;
+                    cupidCheems2.style.opacity = 1;
+                    cupidCheems3.style.opacity = 1;
+                    defeatedCheems.classList.add("hidden");
+                    // cupidCheems1.classList.remove("hidden");
+                    // cupidCheems2.classList.remove("hidden");
+                    // cupidCheems3.classList.remove("hidden");
+                    break;
+                case 4:
+                    heart.classList.remove("shrink1");
+                    heart.classList.remove("shrink2");
+                    heart.classList.remove("shrink3");
+                    heart.classList.remove("grow1");
+                    heart.classList.remove("grow2");
+                    heart.classList.add("grow3");
+                    cupidCheems1.style.opacity = 1;
+                    cupidCheems2.style.opacity = 1;
+                    cupidCheems3.style.opacity = 1;
+                    defeatedCheems.classList.add("hidden");
+                    doubtOverpower.classList.add("hidden");
+                    happinessOverpower.classList.remove("hidden");
+                    document.body.style.backgroundColor = "#FEAEC7"
+                    // cupidCheems1.classList.remove("hidden");
+                    // cupidCheems2.classList.remove("hidden");
+                    // cupidCheems3.classList.remove("hidden");
+                    break;
+                case -1:
+                    heart.classList.add("shrink1");
+                    heart.classList.remove("shrink2");
+                    heart.classList.remove("shrink3");
+                    heart.classList.remove("grow1");
+                    heart.classList.remove("grow2");
+                    heart.classList.remove("grow3");
+                    defeatedCheems.classList.add("hidden");
+                    break;
+                case -2:
+                    heart.classList.remove("shrink1");
+                    heart.classList.add("shrink2");
+                    heart.classList.remove("shrink3");
+                    heart.classList.remove("grow1");
+                    heart.classList.remove("grow2");
+                    heart.classList.remove("grow3");
+                    defeatedCheems.classList.add("hidden");
+                    break;
+                case -3:
+                    heart.classList.remove("shrink1");
+                    heart.classList.remove("shrink2");
+                    heart.classList.add("shrink3");
+                    heart.classList.remove("grow1");
+                    heart.classList.remove("grow2");
+                    heart.classList.remove("grow3");
+                    defeatedCheems.classList.remove("hidden");
+                    doubtOverpower.classList.add("hidden");
+                    document.body.style.backgroundColor = "black"
+                    break;
+                default:
+                    heart.classList.remove("shrink1");
+                    heart.classList.remove("shrink2");
+                    heart.classList.remove("shrink3");
+                    heart.classList.remove("grow1");
+                    heart.classList.remove("grow2");
+                    heart.classList.remove("grow3");
+                    cupidCheems1.style.opacity = 0;
+                    cupidCheems2.style.opacity = 0;
+                    cupidCheems3.style.opacity = 0;
+                    defeatedCheems.classList.add("hidden");
+                    // cupidCheems1.classList.add("hidden")
+                    // cupidCheems2.classList.add("hidden")
+                    // cupidCheems3.classList.add("hidden")
+                    break;
+            }
+        };
+        let count = ()=>{
+            let counter = 0
+            const incrementer = ()=>{
+                if(counter < 4){
+                    counter++;
+                }
+                console.log(counter);
+                return counter
+            }
+            const decrementer = ()=>{
+                if(counter > -3){
+                    counter--;
+                }
+                console.log(counter);
+                return counter
+            }
+            return [incrementer, decrementer]
+        };
+        let [incrementer, decrementer] = count();
+        growBttn.addEventListener("click", (e)=>{
+            const localCount = incrementer();
+            heartSwitcher(heart, localCount);
+        });
+        shrinkBttn.addEventListener("click",(e)=>{
+            const localCount = decrementer();
+            heartSwitcher(heart, localCount);
+        });
+    </script>
+
+    <style>
+        /* HTML ELEMENTS */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffcccc; /* Pink background */
+        }
+
+        h1 {
+            color: #ff3399; /* Red text */
+            margin-top: 50px;
+            text-align: center;
+            font-family: 'Valentines Day', sans-serif;
+            font-size: 60px;
+        }
+
+        button {
+            background-color: #ff0000; /* Red button */
+            color: #ffffff;
+            border: none;
+            margin: 20px;
+            padding: 10px 20px;
+            /* margin: 100px; */
+            /* width: 200px; */
+            max-width: 30%;
+            min-width: 30%;
+            /* height: 100px; */
+            max-height: 100%;
+            min-height: 80%;
+            cursor: pointer;
+            border-radius: 20px;
+            font-family: 'Valentines Day', sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            flex-grow: 1;
+            flex-shrink: 1;
+            /* z-index: 2; */
+        }
+
+        /* BUTTON PSEUDOCLASSES */
+        button:hover {
+            background-color: #cc0000; /* Darker red on hover */
+        }
+
+        /* BUTTON CLASSES */
+        .no-button {
+            background-color: #000000; /* Black button */
+        }
+
+        .no-button:hover {
+            background-color: #333333; /* Darker black on hover */
+        }
+
+        /* IMAGE CLASSES */
+        .heart {
+            max-width: 15%;
+            height: auto;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .cupid-cheems{
+            max-width: 15%;
+            height: auto;
+            opacity: 0;
+            animation: flutter 2s ease-in-out infinite;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .defeated-cheems{
+            max-width: 100%;
+        }
+
+        .loved-cheems{
+            /* max-width: 100%; */
+            max-height: 100%;
+        }
+
+        .hidden {
+            display: none;
+            /* opacity: 0; */
+        }
+
+
+
+        /* CONTAINER CLASSES */
+        .root-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .image-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /* margin-top: 100px; */
+        }
+
+        /* TRANSFORMATION CLASSES */
+        .shrink1{
+            transform: scale(0.8);
+        }
+
+        .shrink2{
+            transform: scale(0.6);
+        }
+        
+        .shrink3{
+            transform: scale(0.4);
+            /* transform: rotate(45deg); */
+            /* background-color: rgb(0, 0, 0); */
+        }
+
+        .grow1{
+            transform: scale(1.2);
+        }
+
+        .grow2{
+            transform:  scale(1.4);
+        }
+        
+        .grow3{
+            transform: scale(1.6);
+        }
+
+        @keyframes flutter {
+            0% {
+                transform: rotate(0deg) translateX(-5%);
+            }
+            50% {
+                transform: rotate(15deg) translateX(5%);
+            }
+            100% {
+                transform: rotate(0deg) translateX(-5%);
+            }
+        }
+    </style>
+</body>
+</html>
